@@ -1,14 +1,14 @@
 format_version: 10
 pipelines:
-  Deployment:
-    group: My-Pipelines
+  deploy:
+    group: HelloWorld
     label_template: ${COUNT}
     lock_behavior: none
     display_order: -1
     materials:
       MyFirstPipeline:
         ignore_for_scheduling: false
-        pipeline: MyFirstPipeline
+        pipeline: built-app
         stage: Build-and-Test
     stages:
     - deploy:
