@@ -6,7 +6,7 @@ pipelines:
     lock_behavior: none
     display_order: -1
     materials:
-      MyFirstPipeline:
+      build-app:
         ignore_for_scheduling: false
         pipeline: built-app
         stage: Build-and-Test
