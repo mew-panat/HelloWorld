@@ -21,6 +21,7 @@ pipelines:
         jobs:
           deploy:
             timeout: 0
+            elastic_profile_id: k8s-profile
             tasks:
             - exec:
                 arguments:
@@ -37,6 +38,7 @@ pipelines:
         jobs:
           deploy-to-prod:
             timeout: 0
+            elastic_profile_id: k8s-profile
             tasks:
             - exec:
                 arguments:
