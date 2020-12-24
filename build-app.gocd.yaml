@@ -22,7 +22,7 @@ pipelines:
         jobs:
           build-application:
             timeout: 0
-            elastic_profile_id: k8s-profile
+            elastic_profile_id: demo-app
             tasks:
             - exec:
                 arguments:
