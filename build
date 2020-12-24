@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Pulling image"
+
+docker pull mewchildy/spring-boot-docker-aws:latest
+
+echo "List running images"
+
+docker ps -a
+
+echo "Run image"
+
+docker run mewchildy/spring-boot-docker-aws
