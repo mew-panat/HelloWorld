@@ -21,7 +21,7 @@ pipelines:
         jobs:
           deploy:
             timeout: 0
-            elastic_profile_id: ubuntu
+            elastic_profile_id: demo-app
             tasks:
             - exec:
                 arguments:
@@ -38,7 +38,7 @@ pipelines:
         jobs:
           deploy-to-prod:
             timeout: 0
-            elastic_profile_id: ubuntu
+            elastic_profile_id: demo-app
             tasks:
             - exec:
                 arguments:
