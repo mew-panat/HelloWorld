@@ -22,7 +22,7 @@ pipelines:
         jobs:
           build-application:
             timeout: 0
-            elastic_profile_id: demo-app
+            elastic_profile_id: ubuntu
             tasks:
             - exec:
                 arguments:
