@@ -40,4 +40,5 @@ pipelines:
                 stage: test
                 job: test
                 source: index.html
+                artifact_origin: gocd
                 run_if: passed
