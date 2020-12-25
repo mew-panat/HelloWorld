@@ -1,5 +1,4 @@
 pull:
-	newgrp docker
 	echo "Pulling image"
 	docker pull mewchildy/spring-boot-docker-aws:latest
 
