@@ -6,10 +6,16 @@ pipelines:
     lock_behavior: none
     display_order: -1
     materials:
-      build-app:
-        ignore_for_scheduling: false
+      upstream:        
         pipeline: build-app
         stage: Build-and-Run
+        name: upstream
+      SourceCodeRepo:
+        git: https://github.com/mewchildy/HelloWorld.git
+        shallow_clone: false
+        auto_update: true
+        branch: master
+        name: SourceCodeRepo
     stages:
     - test:
         fetch_materials: true

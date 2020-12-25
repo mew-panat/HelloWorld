@@ -6,10 +6,10 @@ pipelines:
     lock_behavior: none
     display_order: -1
     materials:
-      test:
-        ignore_for_scheduling: false
-        pipeline: test
-        stage: test
+      upstream:        
+          pipeline: test
+          stage: test
+          name: upstream_pipeline      
     stages:
     - deploy:
         fetch_materials: true
@@ -25,7 +25,6 @@ pipelines:
             - dev
             tasks:
             - exec:
-                command: make
-                arguments:
-                - run                
+                command: echo
+                arguments: "Deployed!"                
                 run_if: passed
