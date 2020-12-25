@@ -35,10 +35,12 @@ pipelines:
                 arguments: 
                 - deploy           
                 run_if: passed
-            - fetch:
+            - fetch:              
                 pipeline: test
                 stage: test
                 job: test
                 source: index.html
+                destination: ''
                 artifact_origin: gocd
+                is_file: true
                 run_if: passed
