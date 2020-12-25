@@ -29,12 +29,7 @@ pipelines:
             timeout: 0
             resources:
             - dev
-            tasks:
-            - exec:
-                command: make
-                arguments: 
-                - deploy           
-                run_if: passed
+            tasks:            
             - fetch:              
                 pipeline: test
                 stage: test
@@ -43,4 +38,9 @@ pipelines:
                 destination: ''
                 artifact_origin: gocd
                 is_file: true
+                run_if: passed
+            - exec:
+                command: make
+                arguments: 
+                - deploy           
                 run_if: passed
