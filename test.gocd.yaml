@@ -29,6 +29,12 @@ pipelines:
             timeout: 0
             resources:
             - dev
+            tabs:
+              Sample: index.html
+            artifacts:
+            - build:
+                source: index.html
+                destination: ''
             tasks:
             - exec:
                 command: make

@@ -19,7 +19,7 @@ pipelines:
           type: success
           allow_only_on_success: false
         jobs:
-          run:
+          deploy:
             timeout: 0
             resources:
             - dev
