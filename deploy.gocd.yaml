@@ -10,6 +10,12 @@ pipelines:
           pipeline: test
           stage: test
           name: upstream_pipeline      
+      SourceCodeRepo:
+        git: https://github.com/mewchildy/HelloWorld.git
+        shallow_clone: false
+        auto_update: true
+        branch: master
+        name: SourceCodeRepo
     stages:
     - deploy:
         fetch_materials: true
