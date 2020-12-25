@@ -26,5 +26,6 @@ pipelines:
             tasks:
             - exec:
                 command: echo
-                arguments: "Deployed!"                
+                arguments: 
+                - "Deployed!"                
                 run_if: passed
