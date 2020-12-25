@@ -10,3 +10,6 @@ test:
 	echo "Testing"
 	curl http://localhost:8080 -o index.html
 	cat index.html
+
+deploy:
+	echo "Deployed"

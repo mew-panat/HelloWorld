@@ -25,7 +25,13 @@ pipelines:
             - dev
             tasks:
             - exec:
-                command: echo
+                command: make
                 arguments: 
-                - "Deployed!"                
+                - deploy           
+                run_if: passed
+            - fetch:
+                pipeline: test
+                stage: test
+                job: test
+                source: index.html
                 run_if: passed
