@@ -2,12 +2,12 @@
 
 echo "Pulling image"
 
-sudo docker pull mewchildy/spring-boot-docker-aws:latest
+docker pull mewchildy/spring-boot-docker-aws:latest
 
 echo "List running images"
 
-sudo docker ps -a
+docker ps -a
 
 echo "Run image"
 
-sudo docker run -d --name spring-boot -p 8080:8080 mewchildy/spring-boot-docker-aws 
+docker run -d --name spring-boot -p 8080:8080 mewchildy/spring-boot-docker-aws 

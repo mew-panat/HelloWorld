@@ -12,7 +12,7 @@ pipelines:
         auto_update: true
         branch: master
     stages:
-    - Build-and-Pull:
+    - Build-and-Run:
         fetch_materials: true
         keep_artifacts: false
         clean_workspace: false
@@ -26,11 +26,11 @@ pipelines:
             - dev
             tasks:
             - exec:
-                command: echo
+                command: make
                 arguments:
-                - "build application"
+                - pull
                 run_if: passed
-          pull:
+          run:
             timeout: 0
             resources:
             - dev
@@ -38,5 +38,5 @@ pipelines:
             - exec:
                 command: make
                 arguments:
-                - pull
+                - run
                 run_if: passed
