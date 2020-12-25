@@ -13,4 +13,4 @@ test:
 	cat index.html
 
 deploy:
-	echo "Deployed"
+	cat index.html
