@@ -9,7 +9,7 @@ pipelines:
       build-app:
         ignore_for_scheduling: false
         pipeline: build-app
-        stage: Build-and-Test
+        stage: Build-and-Pull
     stages:
     - deploy:
         fetch_materials: true
@@ -19,29 +19,13 @@ pipelines:
           type: success
           allow_only_on_success: false
         jobs:
-          deploy:
+          run:
             timeout: 0
-            elastic_profile_id: demo-app
+            resources:
+            - dev
             tasks:
             - exec:
+                command: make
                 arguments:
-                - deployed!
-                command: echo
-                run_if: passed
-    - production:
-        fetch_materials: true
-        keep_artifacts: false
-        clean_workspace: false
-        approval:
-          type: success
-          allow_only_on_success: false
-        jobs:
-          deploy-to-prod:
-            timeout: 0
-            elastic_profile_id: demo-app
-            tasks:
-            - exec:
-                arguments:
-                - '"production deployed"'
-                command: echo
+                - run                
                 run_if: passed

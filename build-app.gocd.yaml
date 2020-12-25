@@ -12,7 +12,7 @@ pipelines:
         auto_update: true
         branch: master
     stages:
-    - Build-and-Test:
+    - Build-and-Pull:
         fetch_materials: true
         keep_artifacts: false
         clean_workspace: false
@@ -20,12 +20,23 @@ pipelines:
           type: success
           allow_only_on_success: false
         jobs:
-          build-application:
+          build:
             timeout: 0
-            elastic_profile_id: demo-app
+            resources:
+            - dev
             tasks:
             - exec:
-                arguments:
-                - '"Hello World"'
                 command: echo
+                arguments:
+                - "build application"
+                run_if: passed
+          pull:
+            timeout: 0
+            resources:
+            - dev
+            tasks:
+            - exec:
+                command: make
+                arguments:
+                - pull
                 run_if: passed
